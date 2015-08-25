@@ -1,10 +1,11 @@
-// Smart
-
-//Smart属性
-//Smart测试方法		118
-//ajax				131
-//cookie			176
-//chart				430
+/**
+ * Smart.js
+ * @github github.com/chen1185280999
+ * 
+ * 作用:方便,统一我们项目开发.
+ * 包含功能:Smart属性,测试方法,ajax,cookie,排序,chart
+ * 
+ */
 
 $(function () {
 
