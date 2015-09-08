@@ -1,9 +1,10 @@
 /**
  * Smart.js
+ * @Author chen
  * @github github.com/chen1185280999
- * 
+ * @QQ	1185280999 (24h在线)
  * 作用:方便,统一我们项目开发.
- * 包含功能:Smart属性,测试方法,ajax,cookie,排序,chart
+ * 包含功能:Smart属性,测试方法,ajax,cookie,快速排序,chart
  * 
  */
 
@@ -11,13 +12,12 @@ $(function () {
 
     var _Smart = window.Smart;
 
-    // cookie模块使用的变量
+    // cookie
     // base编码
     var base64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
     var base64DecodeChars = new Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
         24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1);
 
-    // 给Smart一个构造函数
     var Smart = function () {
         return new Smart.fn.init();
     };
@@ -42,7 +42,6 @@ $(function () {
 
     Smart.fn.init.prototype = Smart.fn;
 
-    // 这extend方法的作用是,将之后的extend方法加到Smart下
     Smart.extend = Smart.fn.extend = function () {
         var options, name, src, copy, copyIsArray, clone, target = arguments[0] || {},
             i = 1,
@@ -111,9 +110,9 @@ $(function () {
         return target;
     };
 
-    // 工具方法
-    // 挂载两个测试方法 使用的时候直接 Smart.textAlert("要弹的东西"); Smart.console("要打印的东西");
-    // 等到上线的时候,把console中注释就行了 Smart.console("1234");
+    // test function
+    //  Smart.textAlert("要弹的东西"); Smart.console("要打印的东西");
+    //Wait  the line, remove the notes
     Smart.extend({
         alert: function (value) {
             alert(value);
@@ -125,11 +124,11 @@ $(function () {
 
     Smart.extend({
         /**
-         * url 请求的地址 data 发送的对象 success 请求成功会调用的函数 eg:
-         * post("url",send,function(data){ alert(data); })
+         * url url; data obj success function
+         * eg:post("url",send,function(data){ alert(data); })
          */
         post: function (url, data, success) {
-            // 入参检测 检测data
+            // data
             if ((typeof (data) != "object") || (jQuery.isEmptyObject(data))) {
                 Smart.console(url + "对应的参数格式错误");
             }
@@ -160,10 +159,10 @@ $(function () {
     });
 
     // cookie
-    // 删,查.
+    //delete,select.
     Smart.extend({
         /**
-         * base64编码
+         * base64
          * 
          * @param {Object}
          *                str
@@ -199,7 +198,7 @@ $(function () {
             return out;
         },
         /**
-         * base64解码
+         * base64
          * 
          * @param {Object}
          *                str
@@ -249,7 +248,7 @@ $(function () {
         },
 
         /**
-         * utf16转utf8
+         * utf16->utf8
          * 
          * @param {Object}
          *                str
@@ -316,7 +315,7 @@ $(function () {
             return out;
         },
 
-        // cookie方法
+        // cookie
         // get
         getCookie: function (objName) {
             var arrStr = document.cookie.split("; ");
@@ -333,10 +332,10 @@ $(function () {
             var d = new Date();
             d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
             var expires = "expires=" + d.toUTCString();
-            //路径很重要
+            //url
             document.cookie = key + "=" + value + "; " + expires + ";path=/Park";
         },
-        // 具体项目要改名
+        // 改名
         deleteCookie: function (key) {
             var date = new Date();
             date.setTime(date.getTime() - 10000);
@@ -469,7 +468,6 @@ $(function () {
 
     // -------------------------chart的方法,具体调用的是echarts
     Smart.extend({
-
         /**
          * 折线图的实现 折线图对象 myChart 放置表格div的id divID 折线图的左侧大标题 title1 折线图的左侧小标题
          * title2 y轴单位 titleY {value} 次/分 折线图的标题(具体是那个硬件的) name x轴的数组 xArray
@@ -567,7 +565,6 @@ $(function () {
 
     })
 
-    // 将Smart设为全局变量
     window.Smart = Smart;
 
 });
