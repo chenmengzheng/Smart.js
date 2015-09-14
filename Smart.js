@@ -141,7 +141,7 @@ $(function () {
                 dataType: "json",
                 success: success,
                 error: function () {
-                    alert("请求服务器出错!请检查网络连接");
+                    Smart.console("请求服务器出错!请检查网络连接");
                 }
             });
         },
@@ -152,7 +152,7 @@ $(function () {
                 url: url,
                 success: success,
                 error: function () {
-                    alert("请求服务器出错!请检查网络连接");
+                     Smart.console("请求服务器出错!请检查网络连接");
                 }
             });
         }
