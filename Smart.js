@@ -1,5 +1,11 @@
 /**
  * Smart.js
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  * @Author chen
  * @github github.com/chen1185280999
  * @QQ	1185280999 (24h在线)
