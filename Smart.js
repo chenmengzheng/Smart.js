@@ -15,6 +15,12 @@
  */
 
 $(function () {
+	
+	qwewaseg
+	as
+	f
+	sadf
+	
 
     var _Smart = window.Smart;
 
